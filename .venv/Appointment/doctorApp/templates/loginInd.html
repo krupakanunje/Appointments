@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>
+            logged in user
+        </title>
+    </head>
+    <body>
+        {% csrf_token %}
+        welcome {{request.user}}
+        <a href="/logOut">logOut</a>
+    </body>
+</html>

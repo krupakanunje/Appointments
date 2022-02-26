@@ -1,0 +1,88 @@
+
+
+
+
+
+
+{% extends "base.html" %}
+{% block title %}
+list
+{% endblock title %}
+{% block head %}
+<head>
+    <title>list</title>
+    {% load static %}
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <style>
+        body{margin-top:20px;
+            color: #bcd0f7;
+            background: #327bb6;
+            position: relative;
+            height: 100%;
+        }
+        
+    </style>
+    </head>
+    {% endblock head %}
+
+    {% block body %}
+
+        <h1 class="text-center">Welcome User</h1> 
+        <center><img src="/static/images/starting.jfif" alt="..."/></center>   
+        <h2 class="text-center">Choose Doctor to consult</h2>    
+
+        <form method="POST" action="/fd_get">
+                 
+      <br>
+      
+    
+        {% csrf_token %}
+        
+        <center>
+          
+            <label >Family Doctor</label>
+            
+             
+             <select name="dc_name" id="size1" required>
+                  <option disable="true" selected >select available doctor</option> 
+                  {%for fd in fd%}
+                  <option data-limit='100'>{{fd.fname}}</option>
+                  {%endfor%}
+             </select>
+             
+        <br>
+        <br>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </center>
+      </form>
+ 
+{% endblock body %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

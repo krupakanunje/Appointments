@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block title %}
+  contact
+{% endblock title %}
+{% load static %}
+
+{% block body %}
+  <!--contact us on email: ice.cream@gmail.com
+    !-->
+    <div class="container-fluid px-0 mb-3">
+                <img src="https://source.unsplash.com/700x300/?mobile,phone"class="d-block w-100" alt="..."/>
+
+    </div>
+    <div class="container mb-3">
+        <h1 class="text-center">Contact Us</h1>    
+    <form method="POST" action="/contact" autocomplete="off">
+        {% csrf_token %}
+        <div class="container-fluid" my-4>
+
+        <div class="mb-3" >
+            <div class="col-auto">
+
+            <label for="exampleInputPassword1" class="form-label">Name</label>
+            <input type="text" class="form-control" name ="name" id="exampleInputPassword1" autocomplete="off">
+          </div>
+        </div>
+        <div class="mb-3">
+            <div class="col-auto">
+
+          <label for="exampleInputEmail1" class="form-label">Email address</label>
+          <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" autocomplete="off">
+          <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        </div>
+        <div class="mb-3">
+            <div class="col-auto">
+
+          <label for="exampleInputPassword1" class="form-label">Phone number(10 digits only)</label>
+          <input type="tel" class="form-control" name ="phone"id="exampleInputPassword1" pattern="^\d{10}$"
+          autocomplete="off" required="required">
+          
+        </div>
+        </div>
+        <div class="mb-3">
+            <div class="col-auto">
+
+            <label for="exampleInputPassword1" class="form-label">Description</label>
+            <input type="text" class="form-control" name ="desc"id="exampleInputPassword1" autocomplete="off">
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </form>
+  </div>
+
+{% endblock body %}
